@@ -4,6 +4,7 @@ import SearchMovies from './components/SearchMovies'
 function App() {
   return (
     <div className="container">
+      <p><i>To Alejandro Parada with Love</i> 💕</p>
       <h1 className="title">
         App Movie Search
       </h1>
