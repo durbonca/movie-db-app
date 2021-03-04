@@ -10,6 +10,7 @@ export default function SearchMovies(){
             </label>
 
                 <input 
+                    className="input"
                     id="query" 
                     name="query" 
                     type="text" 
