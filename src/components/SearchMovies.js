@@ -1,12 +1,27 @@
 import React from "react";
 
 export default function SearchMovies(){
+    
+    const searchMovies = async (event) => {
+        event.preventDefault()
+        console.log('')
+
+        const query = 'Jurassic Park'
+        const url = `https://api.themoviedb.org/3/search/movie?api_key=e2d0b7f154975768708e01ba3e8d3e2b&language=en-US&query=${query}&page=1&include_adult=false`;
+        
+        let movies = await fetch(url)
+        .then(Response => Response.json())
+        .then(data => {return (data)})
+        .catch(error=> console.error(error))
+        
+        console.log(movies)
+    }
+ 
     return (
-        <form className="form">
+        <form className="form" onSubmit={searchMovies}>
             <label 
-                for="query" 
                 className="label" 
-                htmlFor="query">Movie Name:
+                htmlFor="query">Movie Name
             </label>
 
                 <input 
