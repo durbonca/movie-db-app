@@ -1,4 +1,5 @@
 import './App.css';
+import SearchMovies from './components/SearchMovies'
 
 function App() {
   return (
@@ -6,6 +7,7 @@ function App() {
       <h1 className="title">
         App Movie Search
       </h1>
+      <SearchMovies/>
     </div>
   );
 }
