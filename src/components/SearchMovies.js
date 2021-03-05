@@ -41,13 +41,13 @@ export default function SearchMovies(){
     
                 <button 
                     type="submit" 
-                    className="button">
+                    className="button background--blue">
                         Search
                 </button>
                 <button 
                     type="submit"
                     onClick={getRandomWord} 
-                    className="button">
+                    className="button background--green">
                         Am Going to get lucky!
                 </button>
         </form>

@@ -54,16 +54,32 @@ small {
   background-color: rgba(0, 0, 0, .75);
   color: white;
   padding: 1rem 2rem;
-  border: 1px solid rgba(0, 0, 0, .75);
+  border: 1px solid rgba(0, 0, 0, 0.75);
   border-radius: 20px;
   font-size: 1.4rem;
   cursor: pointer;
   transition: background-color 250ms;
   margin-bottom: .3rem;
+  outline: none;
+}
+.background--blue{
+  background-color: rgba(35, 56, 150, 0.75);
+  border: 1px solid rgba(35, 56, 150, 0.75);
+}
+.background--green{
+  background-color: rgba(35, 150, 96, 0.75);
+  border: 1px solid rgba(35, 150, 96, 0.75);
 }
 
 .button:hover{
   background-color: rgba(0, 0, 0, .85);
+}
+
+.background--blue:hover{
+  background-color: rgba(35, 56, 150, 0.85);
+}
+.background--green:hover{
+  background-color: rgba(35, 150, 96, 0.85);
 }
 
 @media (min-width: 786px){
