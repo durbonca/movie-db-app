@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import MovieCard from "./MovieCard"
 
-export default function SearchMovies(){
+export default function SearchMovies(props){
+    const {en} = props
 
     const randomWords = require('random-words');
 
@@ -26,7 +27,7 @@ export default function SearchMovies(){
         <form className="form" onSubmit={searchMovies}>
             <label 
                 className="label" 
-                htmlFor="query">Movie Name
+                htmlFor="query">{ en ? 'Movie Name' : 'Nombre de Pelicula'}
             </label>
 
                 <input 
@@ -42,13 +43,13 @@ export default function SearchMovies(){
                 <button 
                     type="submit" 
                     className="button background--blue">
-                        Search
+                        {en ? 'Search' : 'Buscar' }
                 </button>
                 <button 
                     type="submit"
                     onClick={getRandomWord} 
                     className="button background--green">
-                        Am Going to get lucky!
+                        {en ? 'Am Going to get lucky!' : 'Voy a tener suerte!' }
                 </button>
         </form>
         
