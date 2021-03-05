@@ -5,9 +5,16 @@ import SearchMovies from './components/SearchMovies'
 
 function App() {
   const [ en, setEn ] = useState(true)
+  const [language, setLanguage] = useState('en-US')
 
   function handleLanguage(){
     setEn( !en )
+    if(en){
+    setLanguage('es-ES')
+  }
+    else{
+      setLanguage('en-US')
+    }
   }
 
   return (
@@ -20,7 +27,7 @@ function App() {
       <h1 className="title">
         { en ? 'App Movie Search' : 'App Busqueda de Peliculas'}
       </h1>
-      <SearchMovies en={en} />
+      <SearchMovies en={en} language={language}/>
     </div>
       <Footer en={en}/>
     </>

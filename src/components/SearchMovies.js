@@ -2,12 +2,13 @@ import React, {useState} from "react";
 import MovieCard from "./MovieCard"
 
 export default function SearchMovies(props){
-    const {en} = props
+    const {en, language} = props
 
     const randomWords = require('random-words');
 
     const [query, setQuery] = useState('')
     const [movies, setMovies] = useState([])
+    
     
     const getRandomWord = async () => {
         setQuery(randomWords())
@@ -15,7 +16,7 @@ export default function SearchMovies(props){
 
     const searchMovies = async (event) => {
         event.preventDefault()
-        const url = `https://api.themoviedb.org/3/search/movie?api_key=e2d0b7f154975768708e01ba3e8d3e2b&language=es-ES&query=${query}&page=1&include_adult=false`;
+        const url = `https://api.themoviedb.org/3/search/movie?api_key=e2d0b7f154975768708e01ba3e8d3e2b&language=${language}&query=${query}&page=1&include_adult=false`;
         fetch(url)
         .then(Response => Response.json())
         .then(data => {setMovies(data.results)})
@@ -38,7 +39,7 @@ export default function SearchMovies(props){
                     value={query}
                     required
                     onChange={(e)=> setQuery(e.target.value) }
-                    placeholder="search movie for title"/>
+                    placeholder={en?'search movie for title':'Buscar pelicula por titulo'}/>
     
                 <button 
                     type="submit" 
